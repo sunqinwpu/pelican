@@ -54,6 +54,6 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 
-THEME = "notmyidea"
+THEME = "pelican-sober"
 
 DEFAULT_CATEGORY = 'Others'
