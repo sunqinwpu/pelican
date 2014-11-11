@@ -4,8 +4,8 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Estel'
 SITENAME = u'Die Luft der Freiheit weht!'
-#SITEURL = 'http://libereco.cn:8000'
-SITEURL = ''
+SITEURL = 'http://libereco.cn'
+#SITEURL = ''
 
 PATH = 'content'
 
@@ -54,8 +54,8 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 
-THEME = "pelican-sober"
+THEME = "themes/pelican-sober"
 
 DEFAULT_CATEGORY = 'Others'
 
-DISQUS_SITENAME = u"{liberecocn}"
+DUOSHUO_SITENAME = 'leboreco'
