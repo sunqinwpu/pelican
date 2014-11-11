@@ -57,3 +57,5 @@ DEFAULT_PAGINATION = 10
 THEME = "pelican-sober"
 
 DEFAULT_CATEGORY = 'Others'
+
+DISQUS_SITENAME = u"{liberecocn}"
