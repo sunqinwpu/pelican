@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'Estel'
-SITENAME = u'Die Luft der Freiheit weht!'
+AUTHOR = 'Estel'
+SITENAME = 'Die Luft der Freiheit weht!'
+SITESUBTITLE = 'Estel\'s blog!'
 SITEURL = 'http://libereco.cn'
 #SITEURL = ''
 
@@ -16,13 +17,13 @@ DATE_FORMATS = {
     'zh':('chs','%Y-%m-%d, %a'),
 }
 
-DEFAULT_LANG = u'zh_CN'
-#DEFAULT_LANG = u'en_US'
+DEFAULT_LANG = 'zh_CN'
+#DEFAULT_LANG = 'en_US'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 RATEGORY_FEED_ATOM = None
-TRANSLATION_FEED_ATOM = None
+TRANSLATION_FEED_ATOM = 'feeds/all-%s.atom.xml'
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
@@ -47,6 +48,9 @@ SOCIAL = (('Weibo', 'http://weibo.com/1958413980/profile'),
           ('About Me', 'http://about.me/sunqi'),
           ('Facebook','https://www.facebook.com/frank.sun.16'),
           ('Twitter','https://twitter.com/sunqinwpu'))
+
+GITHUB_URL = 'https://github.com/sunqinwpu'
+TWITTER_USERNAME = 'sunqinwpu'
 
 DEFAULT_PAGINATION = 10
 

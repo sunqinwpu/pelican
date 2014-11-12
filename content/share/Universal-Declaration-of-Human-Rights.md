@@ -2,8 +2,9 @@ Title: 世界人权宣言
 Category: Share
 Tags: 人权
 Date: 2014-10-08
-slug: Universal-Declaration-of-Human-Rights-en
+slug: Universal-Declaration-of-Human-Rights
 lang: en_US
+translation: true
 Summay: 世界人权宣言
 
 **序言**
