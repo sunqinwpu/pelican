@@ -16,8 +16,8 @@ DATE_FORMATS = {
     'zh':('chs','%Y-%m-%d, %a'),
 }
 
-#DEFAULT_LANG = u'zh_CN'
-DEFAULT_LANG = u'en_US'
+DEFAULT_LANG = u'zh_CN'
+#DEFAULT_LANG = u'en_US'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -59,3 +59,9 @@ THEME = "themes/pelican-sober"
 DEFAULT_CATEGORY = 'Others'
 
 DUOSHUO_SITENAME = 'libereco'
+
+ARTICLE_URL = 'posts/{category}/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
+ARTICLE_SAVE_AS = 'posts/{category}/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
+ARTICLE_LANG_URL = 'posts/{category}/{date:%Y}/{date:%m}/{date:%d}/{slug}-{lang}/'
+ARTICLE_LANG_SAVE_AS = 'posts/{category}/{date:%Y}/{date:%m}/{date:%d}/{slug}-{lang}/index.html'
+
