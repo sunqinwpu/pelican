@@ -1,4 +1,4 @@
-Title: 开始写博客
+Title: Start My Blog!
 Date: 2014-10-08
 Modified: 2014-10-08
 Category: Others

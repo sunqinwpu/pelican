@@ -58,4 +58,4 @@ THEME = "themes/pelican-sober"
 
 DEFAULT_CATEGORY = 'Others'
 
-DUOSHUO_SITENAME = 'leboreco'
+DUOSHUO_SITENAME = 'libereco'
