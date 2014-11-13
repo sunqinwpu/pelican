@@ -59,6 +59,8 @@ DEFAULT_PAGINATION = 10
 
 
 THEME = "themes/pelican-sober"
+PELICAN_SOBER_ABOUT = "My name is Qi Sun, now I am working at alibaba. Ubuntu,java,python."
+PELICAN_SOBER_STICKY_SIDEBAR = True
 
 DEFAULT_CATEGORY = 'Others'
 
