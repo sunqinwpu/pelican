@@ -40,7 +40,7 @@ STATIC_PATHS = [
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
+         ('Hatter Jiang', 'p.program.me'),
          ('Jinja2', 'http://jinja.pocoo.org/'),)
 
 # Social widget
@@ -71,3 +71,4 @@ ARTICLE_SAVE_AS = 'posts/{category}/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.h
 ARTICLE_LANG_URL = 'posts/{category}/{date:%Y}/{date:%m}/{date:%d}/{slug}-{lang}/'
 ARTICLE_LANG_SAVE_AS = 'posts/{category}/{date:%Y}/{date:%m}/{date:%d}/{slug}-{lang}/index.html'
 
+GOOGLE_ANALYTICS = 'UA-57075958-1'
