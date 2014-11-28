@@ -40,7 +40,7 @@ STATIC_PATHS = [
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Hatter Jiang', 'p.program.me'),
+         ('Hatter Jiang', 'http://p.program.me'),
          ('Jinja2', 'http://jinja.pocoo.org/'),)
 
 # Social widget
