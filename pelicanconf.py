@@ -59,7 +59,7 @@ DEFAULT_PAGINATION = 10
 
 
 THEME = "themes/pelican-sober"
-PELICAN_SOBER_ABOUT = "孙奇，码农一枚，现在阿里巴巴国际站，爱好非常广泛，或许，我们会成为朋友"
+PELICAN_SOBER_ABOUT = "Estel, an coder, work at alibaba縜 man of wide interests.縈aybe we will become friends." 
 PELICAN_SOBER_STICKY_SIDEBAR = True
 
 DEFAULT_CATEGORY = 'Others'
