@@ -59,7 +59,7 @@ DEFAULT_PAGINATION = 10
 
 
 THEME = "themes/pelican-sober"
-PELICAN_SOBER_ABOUT = "My name is Qi Sun, now I am working at alibaba. Ubuntu,java,python."
+PELICAN_SOBER_ABOUT = "孙奇，码农一枚，现在阿里巴巴国际站，爱好非常广泛，或许，我们会成为朋友"
 PELICAN_SOBER_STICKY_SIDEBAR = True
 
 DEFAULT_CATEGORY = 'Others'
