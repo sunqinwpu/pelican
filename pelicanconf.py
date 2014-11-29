@@ -59,7 +59,7 @@ DEFAULT_PAGINATION = 10
 
 
 THEME = "themes/pelican-sober"
-PELICAN_SOBER_ABOUT = "Estel, an coder, work at alibaba¿a man of wide interests. Maybe we will become friends." 
+PELICAN_SOBER_ABOUT = "Estel, an coder of wide interests, work at alibaba. Maybe we will become friends." 
 PELICAN_SOBER_STICKY_SIDEBAR = True
 
 DEFAULT_CATEGORY = 'Others'
