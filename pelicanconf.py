@@ -41,7 +41,8 @@ STATIC_PATHS = [
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Hatter Jiang', 'http://p.rogram.me'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),)
+         ('Jinja2', 'http://jinja.pocoo.org/'),
+         ('OWASP', 'http://www.owasp.org.cn/'),)
 
 # Social widget
 SOCIAL = (('Weibo', 'http://weibo.com/1958413980/profile'),
