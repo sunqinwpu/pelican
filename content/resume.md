@@ -25,8 +25,8 @@ Email: sunqinwpu@gmail.com
 
 - 2012.4 - 至今 阿里巴巴国际技术部 资深开发工程师
 
- - 2014.4 - 2013.10 在多语言和SEO团队。负责网站前后台多个模块的开发。
- - 2013.10 - 至今 在采购直达团队。 负责采购直达业务的业务把控和跟进、架构优化升级，质量控制和故障分析处理，新人指导和招聘。
+ - 2014.4 - 2013.10 在多语言和SEO团队。负责阿里巴巴多语言网站前后台([Spanish alibaba](http://spanish.alibaba.com))多个模块的开发。
+ - 2013.10 - 至今 在采购直达团队。 负责采购直达业务([AliSourcing Pro](http://sourcing.alibaba.com))的业务把控和跟进、架构优化升级，质量控制和故障分析处理，新人指导和招聘。
  - 工作内容涉及到的技术包括机器翻译系统，缓存系统，文案管理系统，面向SOA的服务架构，消息中间件，数据库优化，web服务器，web开发框架，前后端性能优化，网站安全，SEO，规则引擎。
 
 专业技能:
@@ -44,3 +44,6 @@ Email: sunqinwpu@gmail.com
 
 附录:
 
+- [About Me](http://about.me/sunqi)
+- [Github](https://github.com/sunqinwpu)
+- [Linkin](https://cn.linkedin.com/in/sunqizju)
