@@ -1,7 +1,7 @@
 Title: 如何设计一个审核系统
 Date: 2014-11-26
 Modified: 2014-11-26
-Category: architecture
+Category: Architecture
 Tags: 审核系统,架构,监控,容错
 Slug: how-to-design-an-audit-system
 Summary: 如何设计一个实时，高性能，高可靠的审核系统
