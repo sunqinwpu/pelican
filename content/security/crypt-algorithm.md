@@ -40,7 +40,7 @@ SHA系列包括五个算法，分别是SHA-1、SHA-224、SHA-256、SHA-384，和
 非对称加密算法:
 涉及的问题:公钥,私钥,证书系统,RSA,ECC,E1 Gamal,DSA,Diffie–Hellman key exchange。
 
-
+Base64编码
 
 
 
