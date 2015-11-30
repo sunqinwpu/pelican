@@ -73,3 +73,20 @@ ARTICLE_LANG_URL = 'posts/{category}/{date:%Y}/{date:%m}/{date:%d}/{slug}-{lang}
 ARTICLE_LANG_SAVE_AS = 'posts/{category}/{date:%Y}/{date:%m}/{date:%d}/{slug}-{lang}/index.html'
 
 GOOGLE_ANALYTICS = 'UA-57075958-1'
+
+PLUGIN_PATHS = ['../pelican-plugins']
+PLUGINS=['sitemap',]
+
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.5,
+        'indexes': 0.5,
+        'pages': 0.5
+    },
+    'changefreqs': {
+        'articles': 'monthly',
+        'indexes': 'daily',
+        'pages': 'monthly'
+    }
+}

@@ -1,10 +1,11 @@
 Title: GPG(Gnu Privacy Guird) & GnuPG
-Date: 2015-03-12
-Modified: 2015-03-12
+Date: 2015-12-20
+Modified: 2015-12-20
 Category: Security
 Tags: GPG,encrypt,email
 Slug: gnu-privacy-guird
 Summary: Gnu Privacy Guird
+
 ###### 概述
 如何进行可靠的安全通信,从古至今一直就是一个问题。本文所说的可靠安全，不是说信息可到达性。本文所说包括2个维度：
 - 隐私性。即如何保障只有通信双方知道通信的内容，而不被其他人获知。
