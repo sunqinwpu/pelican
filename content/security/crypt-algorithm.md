@@ -60,3 +60,4 @@ Base64编码
 - [HMAC](http://en.wikipedia.org/wiki/Hash-based_message_authentication_code)
 - [PBKDF2](http://en.wikipedia.org/wiki/PBKDF2)
 - [Let's Encrypt](https://letsencrypt.org/)
+- [Java C# AES ](https://zenu.wordpress.com/2011/09/21/aes-128bit-cross-platform-java-and-c-encryption-compatibility/)
