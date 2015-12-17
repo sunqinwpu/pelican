@@ -3,7 +3,7 @@ Date: 2015-12-12 14:00
 Modified: 2015-12-12 14:00
 Category: study
 Tags: Java,book 
-Slug: recommend-it-books
+Slug: initiative-study
 Authors: Estel
 Summary: 自己学习中，觉得比较好的书。有些也没看完，也放在这里，欢迎大家补充。
 
