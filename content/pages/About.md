@@ -14,3 +14,6 @@ Summay: Estel, An IT Engineer, but love everything which is interesting!
 
 爱好阅读，电影，各种运动(目前羽毛球比较规律，每周2次)，喜欢户外旅行,探索未知的世界。
 
+如果你觉得我的blog，对你有帮助，欢迎打赏。
+
+![Alipay](https://libereco-kv.oss-cn-hangzhou.aliyuncs.com/image/1.pic.jpg)
