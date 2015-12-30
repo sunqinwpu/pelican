@@ -46,15 +46,19 @@ bcrypt经过了很多安全专家的仔细分析，使用在以安全著称的Op
 和上述两种方案不同，scrypt不仅计算所需时间长，而且占用的内存也多，使得并行计算多个摘要异常困难，因此利用rainbow table进行暴力攻击更加困难。scrypt没有在生产环境中大规模应用，并且缺乏仔细的审察和广泛的函数库支持。但是，scrypt在算法层面只要没有破绽，它的安全性应该高于PBKDF2和bcrypt。
 涉及的问题: MD5,SHA-1,HMAC,bcrypt,scrypt,PBKDF2
 
-对称加密算法:
+##### 对称加密算法:
 涉及的问题: DES,3DES,Blowfish,IDEA,RC4,RC5,RC6,AES
 
-非对称加密算法:
+
+- ECB/CBC/CFB/OFB/CTR
+
+##### 非对称加密算法:
 涉及的问题:公钥,私钥,证书系统,RSA,ECC,E1 Gamal,DSA,Diffie–Hellman key exchange。
 
 Base64编码
 
 
+RSA/ECB/PKCS1Padding
 
 相关链接
 - [HMAC](http://en.wikipedia.org/wiki/Hash-based_message_authentication_code)
