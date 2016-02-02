@@ -101,16 +101,119 @@ public class DomTest {
 	- 必须遍历整个文档
 缺点就是：
 	- 无法定位文档层次，无法随机访问
-	- 非常复杂，需要自己定制Tag关系
+	- 复杂，其实也不算太复杂，需要自己定制Tag关系
 示例代码：
-
+	解析类需要继承DefaultHandler，并覆盖其中对应的方法。
+    
 ```java
+public class SAXTest {
+    /** */
+    private static Logger logger = LogManager.getLogger(DomTest.class);
 
+    /**
+     * 测试SAX解析XML
+     */
+    @Test
+    public void testSaxParse() {
+        try {
+            InputStream inputStream = DomTest.class.getClassLoader().getResourceAsStream(
+                "xml/books.xml");
+            SAXParserFactory factory = SAXParserFactory.newInstance();
+            SAXParser parser = factory.newSAXParser();
+            parser.parse(inputStream, new BooksHandler());
+        } catch (Exception e) {
+            logger.error("parse exception", e);
+        }
+    }
+}
+
+class BooksHandler extends DefaultHandler {
+    /** */
+    private static Logger logger = LogManager.getLogger(DomTest.class);
+
+    @Override
+    public void startDocument() throws SAXException {
+        logger.info("start document");
+    }
+
+    @Override
+    public void endDocument() throws SAXException {
+        logger.info("end document");
+    }
+
+    @Override
+    public void startElement(String uri, String localName, String qName, Attributes attributes)
+                                                                                               throws SAXException {
+        logger.info("start element, uri:" + uri + ",localName:" + localName + ",qName:" + qName);
+        for (int i = 0; i < attributes.getLength(); i++) {
+            logger
+                .info("attributes qName:" + attributes.getQName(i) + ":" + attributes.getValue(i));
+        }
+    }
+
+    @Override
+    public void endElement(String uri, String localName, String qName) throws SAXException {
+        logger.info("end element, uri:" + uri + ",localName:" + localName + ",qName:" + qName);
+    }
+
+    @Override
+    public void characters(char[] ch, int start, int length) throws SAXException {
+        logger.info("element value:" + new String(ch, start, length));
+    }
+}
 ```
-- StAX
+
 - JDOM
+
 - Dom4j
 
+- StAX
+上面介绍的4种XML处理方式都是JDK6.0之前提供的工具。StAX(Streaming Api for XML)是JDK6.0新提供的XML解析工具，是一种针对XML的流式拉分析API。如同SAX一样，StAX也是基于流的模型，流模型分2类：
+	- 推模型：就是我们常说的SAX，它是一种靠事件驱动的模型。当它每发现一个节点就引发一个事件，而我们需要编写这些事件的处理程序。这样的做法很麻烦，且不灵活。
+	- 拉模型：在遍历文档时，会把感兴趣的部分从读取器中拉出，不需要引发事件，允许我们选择性地处理节点。这大大提高了灵活性，以及整体效率。
+
+```java
+public class StAXTest {
+    /** */
+    private static Logger logger = LogManager.getLogger(DomTest.class);
+
+    /**
+     * 测试SAX解析XML
+     */
+    @Test
+    public void testStAXParse() {
+        try {
+            InputStream inputStream = DomTest.class.getClassLoader().getResourceAsStream(
+                "xml/books.xml");
+            XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
+            XMLStreamReader xmlStreamReader = xmlInputFactory.createXMLStreamReader(inputStream);
+            while (xmlStreamReader.hasNext()) {
+                int eventType = xmlStreamReader.next();
+                // 如果是元素的开始
+                if (eventType == XMLStreamConstants.START_ELEMENT) {
+                    logger.info("localName:" + xmlStreamReader.getLocalName());
+                    for (int i = 0; i < xmlStreamReader.getAttributeCount(); i++) {
+                        logger.info("attribute name:" + xmlStreamReader.getAttributeName(i));
+                        logger.info("attribute value:" + xmlStreamReader.getAttributeValue(i));
+                    }
+                }
+
+                if (eventType == XMLStreamConstants.START_DOCUMENT) {
+                    logger.info("start document");
+                }
+                if (eventType == XMLStreamConstants.END_DOCUMENT) {
+                    logger.info("end document");
+                }
+                if (eventType == XMLStreamConstants.CHARACTERS) {
+                    logger.info("text:" + xmlStreamReader.getText());
+                }
+            }
+        } catch (Exception e) {
+            logger.error("parse exception", e);
+        }
+    }
+}
+```
 
 ###### Java bean to XML
 &#160; &#160; &#160; &#160;很多时候，我们希望解析过程自动化，毕竟上面的case代码看起来比较枯燥，又没有什么技术含量。开发人员，往往是面向业务开发，如果工具能直接从XML转换到Java Bean，从Java Bean转换到Xml，能大大降低开发成本。
