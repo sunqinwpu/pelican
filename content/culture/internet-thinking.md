@@ -3,7 +3,7 @@ Date: 2015-12-09 14:00
 Modified: 2015-12-09 14:00
 Category: culture
 Tags: 极限编程，敏捷，效率
-Slug: extreme-programming
+Slug: internet-thinking
 Authors: Estel
 Summary: 极限编程给我们带来什么?
 
