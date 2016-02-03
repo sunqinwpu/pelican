@@ -167,9 +167,43 @@ class BooksHandler extends DefaultHandler {
 ```
 
 - JDOM
+  JDOM也是基于Document模型的，只不过，作为新一代的工具，提供了更简单易用的API。
+  
+```java
+public class JDomTest {
+    /** */
+    private static Logger logger = LogManager.getLogger(JDomTest.class);
+
+    /**
+     *
+     */
+    @Test
+    public void testJdomParse() {
+        try {
+            InputStream inputStream = DomTest.class.getClassLoader().getResourceAsStream(
+                "xml/books.xml");
+            SAXBuilder saxBuilder = new SAXBuilder();
+            Document document = saxBuilder.build(inputStream);
+            Element books = document.getRootElement();
+            logger.info("books name:" + books.getName());
+            List<Element> bookList = books.getChildren();
+            for (Element element : bookList) {
+                logger.info("book attribute id:" + element.getAttributeValue("id"));
+                List<Element> childElements = element.getChildren();
+                for (Element childElement : childElements) {
+                    logger.info("book child " + childElement.getName() + ",value:"
+                                + childElement.getText());
+                }
+            }
+        } catch (Exception e) {
+            logger.error("parse error", e);
+        }
+    }
+}
+```
 
 - Dom4j
-
+  同上，类似，也是基于DOM的处理器，使用SAXReader处理xml。不做赘述。
 - StAX
 上面介绍的4种XML处理方式都是JDK6.0之前提供的工具。StAX(Streaming Api for XML)是JDK6.0新提供的XML解析工具，是一种针对XML的流式拉分析API。如同SAX一样，StAX也是基于流的模型，流模型分2类：
 	- 推模型：就是我们常说的SAX，它是一种靠事件驱动的模型。当它每发现一个节点就引发一个事件，而我们需要编写这些事件的处理程序。这样的做法很麻烦，且不灵活。
@@ -219,16 +253,145 @@ public class StAXTest {
 ```
 
 ###### Java bean to XML
-&#160; &#160; &#160; &#160;很多时候，我们希望解析过程自动化，毕竟上面的case代码看起来比较枯燥，又没有什么技术含量。开发人员，往往是面向业务开发，如果工具能直接从XML转换到Java Bean，从Java Bean转换到Xml，能大大降低开发成本。
+&#160; &#160; &#160; &#160;很多时候，我们希望解析过程自动化，毕竟上面的case代码看起来比较枯燥，又没有什么技术含量。开发人员，往往是面向业务开发，如果工具能直接从XML转换到Java Bean，从Java Bean转换到Xml，能大大降低开发成本。下面介绍的几个工具，都可以实现java bean和xml之间的互相转换。
 
 - Digester
+	
 - JAXB
+	
 - XStream
+示例代码：
+
+```java
+public class Author {
+    /** */
+    private String name;
+
+    public Author(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+public class AuthorConverter implements SingleValueConverter {
+
+    public String toString(Object obj) {
+        return ((Author) obj).getName();
+    }
+
+    public Object fromString(String name) {
+        return new Author(name);
+    }
+
+    public boolean canConvert(Class type) {
+        return type.equals(Author.class);
+    }
+}
+
+public class Blog {
+    private Author writer;
+    private List   entries = new ArrayList();
+
+    public Blog(Author writer) {
+        this.writer = writer;
+    }
+
+    public void add(Entry entry) {
+        entries.add(entry);
+    }
+
+    public List getContent() {
+        return entries;
+    }
+}
+
+public class Entry {
+    /** */
+    private String title;
+    /** */
+    private String description;
+
+    /**
+     * @param title
+     * @param description
+     */
+    public Entry(String title, String description) {
+        this.setTitle(title);
+        this.setDescription(description);
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+}
+
+public class XstreamTest {
+    /**
+     *
+     */
+    @Test
+    public void testToXml() {
+        TestDolphin testDolphin = new TestDolphin();
+        testDolphin.setName("andrew");
+        XStream xStream = new XStream();
+        xStream.alias("dolphin", TestDolphin.class);
+        String xml = xStream.toXML(testDolphin);
+        System.out.println("testDolphin:\n" + xml);
+
+        TestDolphin newTestDolphin = (TestDolphin) xStream.fromXML(xml);
+        Assert.assertEquals(newTestDolphin.isSmart(), testDolphin.isSmart());
+    }
+
+    @Test
+    public void testToStarndXml() {
+        Blog teamBlog = new Blog(new Author("Guilherme Silveira"));
+        teamBlog.add(new Entry("first", "My first blog entry."));
+        teamBlog.add(new Entry("tutorial",
+            "Today we have developed a nice alias tutorial. Tell your friends! NOW!"));
+        XStream xstream = new XStream();
+
+        // class alias
+        xstream.alias("blog", Blog.class);
+        xstream.alias("entry", Entry.class);
+
+        // field alias
+        xstream.aliasField("author", Blog.class, "writer");
+
+        // Implicit Collections
+        xstream.addImplicitArray(Blog.class, "entries");
+
+        // field as attribute
+        xstream.useAttributeFor(Blog.class, "writer");
+        xstream.registerConverter(new AuthorConverter());
+
+        System.out.println("xml:");
+        System.out.println(xstream.toXML(teamBlog));
+    }
+```
 
 ###### 对比Json,ProtoBuffer
 - Json
-- ProtoBuffer
 
+- ProtoBuffer
 
 ###### 代码里
 &#160; &#160; &#160; &#160;上面使用到的相关代码，参考GitHub上的[java-common](https://github.com/sunqinwpu/java-common)工程。
@@ -240,3 +403,4 @@ public class StAXTest {
 - [Stax](https://zh.wikipedia.org/wiki/StAX)
 - [ProtoBuffer](https://github.com/google/protobuf)
 - [Json](https://zh.wikipedia.org/wiki/JSON)
+- [Fastjson](https://github.com/google/protobuf)
