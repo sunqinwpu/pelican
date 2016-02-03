@@ -2,7 +2,7 @@ Title: Java XML
 Date: 2016-01-20 14:00
 Modified: 2015-01-20 14:00
 Category: study
-Tags: XML,Java,DOM,SAX,Digester,serialize,json 
+Tags: XML,Java,DOM,SAX,Digester,serialize,json
 Slug: java-xml
 Authors: Estel
 Summary: Java XML处理技术
