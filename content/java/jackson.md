@@ -286,5 +286,5 @@ public class LRUMap<K,V> extends LinkedHashMap<K,V>
 - 强烈建议抛弃jackson，直接使用fastjason。
 
 ###### 附录
-- Hashmap并发put导致死循环问题，参考[http://coolshell.cn/articles/9606.html]
-- LinkedHashmap的坑 [http://www.blogjava.net/aoxj/archive/2012/06/18/381001.html]
+- Hashmap并发put导致死循环问题，参考[http://coolshell.cn/articles/9606.html](http://coolshell.cn/articles/9606.html)
+- LinkedHashmap的坑 [http://www.blogjava.net/aoxj/archive/2012/06/18/381001.html](http://www.blogjava.net/aoxj/archive/2012/06/18/381001.html)
