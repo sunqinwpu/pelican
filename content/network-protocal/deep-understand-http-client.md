@@ -58,6 +58,7 @@ try {
     } catch (Exception e) {
          logger.error("download file error", e);
     } finally {
+    	// 务必要释放连接，可以被其他线程复用
          method.releaseConnection();
     }
         private static HttpClient getHttpClient() {
@@ -65,10 +66,10 @@ try {
             httpClient = new HttpClient(new MultiThreadedHttpConnectionManager());
             httpClient.getHttpConnectionManager().getParams().setConnectionTimeout(DEFAULT_CONNECTION_TIMEOUT);
             httpClient.getHttpConnectionManager().getParams().setSoTimeout(DEFAULT_SO_TIMEOUT);
-            httpClient.getHttpConnectionManager().getParams().setDefaultMaxConnectionsPerHost(maxHostConnections);
+// 设置每个Host最大连接数，默认是2，在并发情况下，等待连接，性能变差            httpClient.getHttpConnectionManager().getParams().setDefaultMaxConnectionsPerHost(maxHostConnections);
             httpClient.getHttpConnectionManager().getParams().setMaxTotalConnections(maxTotalConnections);
-	   //每次都检查连接是否正常，防止Connection Reset
-       httpClient.getHttpConnectionManager().getParams().setStaleCheckingEnabled(true);
+//每次都检查连接是否正常，防止Connection Reset
+httpClient.getHttpConnectionManager().getParams().setStaleCheckingEnabled(true);
             httpClient.getParams().setConnectionManagerTimeout(DEFAULT_HTTPCONNECTIONMANAGER_TIMEOUT);
         }
 
@@ -78,8 +79,9 @@ try {
 
 ##### 相关链接
 1. [HttpClient Tutorial ](https://hc.apache.org/httpcomponents-client-ga/tutorial/html/index.html)
-2. [RFC 2616](https://www.ietf.org/rfc/rfc2616.txt)
- 
+2. [HttpClient Performance Optimize](http://hc.apache.org/httpclient-3.x/performance.html)
+3. [RFC 2616](https://www.ietf.org/rfc/rfc2616.txt)
+
 
 
 
