@@ -21,11 +21,9 @@ DEFAULT_LANG = 'zh_CN'
 #DEFAULT_LANG = 'en_US'
 
 # Feed generation is usually not desired when developing
-FEED_ALL_ATOM = None
-RATEGORY_FEED_ATOM = None
+# FEED_ALL_ATOM = True
+# FEED_ALL_RSS = True
 TRANSLATION_FEED_ATOM = 'feeds/all-%s.atom.xml'
-AUTHOR_FEED_ATOM = None
-AUTHOR_FEED_RSS = None
 
 # path-specific metadata
 EXTRA_PATH_METADATA = {
@@ -35,6 +33,7 @@ EXTRA_PATH_METADATA = {
 # static paths will be copied without parsing their contents
 STATIC_PATHS = [
     'pictures',
+    'theme/images',
     'extra/robots.txt',
     ]
 
@@ -55,17 +54,40 @@ TWITTER_USERNAME = 'sunqinwpu'
 
 DEFAULT_PAGINATION = 10
 
+DISQUS_SITENAME = 'liberecocn'
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
 
-THEME = "themes/pelican-sober"
-PELICAN_SOBER_ABOUT = "Estel, an coder of wide interests, work at alibaba. Maybe we will become friends." 
-PELICAN_SOBER_STICKY_SIDEBAR = True
+#THEME = "themes/blue-penguin"
+#THEME = "themes/pelican-sober"
+THEME = "pelican-themes/elegant"
 
-DEFAULT_CATEGORY = 'Others'
+#elegant theme
+DIRECT_TEMPLATES = (('index', 'tags', 'categories','archives', 'search', '404'))
+TAG_SAVE_AS = ''
+CATEGORY_SAVE_AS = ''
+AUTHOR_SAVE_AS = ''
+USE_SHORTCUT_ICONS = True
 
-DUOSHUO_SITENAME = 'libereco'
+# Elegant Lables
+SOCIAL_PROFILE_LABEL = u'Stay in Touch'
+RELATED_POSTS_LABEL = 'Keep Reading'
+SHARE_POST_INTRO = 'Like this post? Share on:'
+COMMENTS_INTRO = 'So what do you think? Dis I miss something? Is any part unclear? Leave your comments below.'
+
+# Mailchimp
+EMAIL_SUBSCRIPTION_LABEL = u'Get Monthly Updates'
+EMAIL_FIELD_PLACEHOLDER = u'Enter your email...'
+SUBSCRIBE_BUTTON_TITLE = u'Send me Free updates'
+MAILCHIMP_FORM_ACTION = u'empty'
+
+
+# SMO
+FEATURED_IMAGE = SITEURL + '/theme/images/apple-touch-icon-152x152.png'
+
+
+
 
 ARTICLE_URL = 'posts/{category}/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
 ARTICLE_SAVE_AS = 'posts/{category}/{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
@@ -74,9 +96,10 @@ ARTICLE_LANG_SAVE_AS = 'posts/{category}/{date:%Y}/{date:%m}/{date:%d}/{slug}-{l
 
 GOOGLE_ANALYTICS = 'UA-57075958-1'
 
+# Plugins and extensions
+MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc']
 PLUGIN_PATHS = ['../pelican-plugins']
-PLUGINS=['sitemap',]
-
+PLUGINS=['sitemap','tipue_search','tag_cloud', 'related_posts']
 SITEMAP = {
     'format': 'xml',
     'priorities': {
