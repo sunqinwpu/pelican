@@ -99,7 +99,11 @@ GOOGLE_ANALYTICS = 'UA-57075958-1'
 # Plugins and extensions
 MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc']
 PLUGIN_PATHS = ['../pelican-plugins']
-PLUGINS=['sitemap','tipue_search','tag_cloud', 'related_posts']
+#PLUGINS = ['sitemap', 'extract_toc', 'tipue_search', 'liquid_tags.img',
+#           'neighbors', 'latex', 'related_posts', 'assets', 'share_post',
+#		              'multi_part']
+PLUGINS=['sitemap','extract_toc','tipue_search','liquid_tags.img',
+			   'tag_cloud', 'related_posts']
 SITEMAP = {
     'format': 'xml',
     'priorities': {
