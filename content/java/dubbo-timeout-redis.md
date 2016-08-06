@@ -11,7 +11,8 @@ Summary: Dubbo服务周期性超时问题排查思路，最终定位为Redis周�
 新公司刚入职、接手的系统有个奇怪的现象，A系统通过Dubbo服务调用B系统的几个服务，每隔十几分钟均出现大量的超时。对这种问题，也算是见多识广，不过这次排查也着实耗费了不少精力，走了不少弯路。
 
 发生问题的日志如下：
-	![fp-titan-architecture](https://obe6rxjoq.qnssl.com/fp-dubbo-exception-1.png "A系统异常1")
+
+![fp-titan-architecture](https://obe6rxjoq.qnssl.com/fp-dubbo-exception-1.png "A系统异常1")
 ##### 整体架构
 - 整体架构
 
@@ -73,13 +74,14 @@ Summary: Dubbo服务周期性超时问题排查思路，最终定位为Redis周�
 7. 定位Redis问题
 	
 	仔细查看代码，发现，在这多个查询中，都用到了redis外部查询。
-<code>
-    public List<GeoRadiusResponse> georadius(String key, double longitude, double latitude, double radius, GeoUnit unit, GeoRadiusParam param) {
+<pre>
+public List<GeoRadiusResponse> georadius(String key, double longitude, double latitude, double radius, GeoUnit unit, GeoRadiusParam param) {
         this.checkIsInMultiOrPipeline();
         this.client.georadius(key, longitude, latitude, radius, unit, param);
         return (List)BuilderFactory.GEORADIUS_WITH_PARAMS_RESULT.build(this.client.getObjectMultiBulkReply());
     }
-</code>
+ </pre>  
+ 
 	难道Redis会周期性性能变差吗？ 查阅相关资料发现，Redis定期刷盘会导致周期性性能变差。
 	
 	至此，基本确定是Redis周期性刷盘问题导致。
@@ -87,7 +89,7 @@ Summary: Dubbo服务周期性超时问题排查思路，最终定位为Redis周�
  
  找到DBA，查看Redis主机的配置，果然刷盘策略是(save 900 1 60 1000 600 10000)。即900秒内，只要有1次update，就会触发持久化动作。而我们的系统中，部分从mysql和Cassandra读取到的数据会回写到Redis。
  	
- 	至此，真相大白。
+	至此，真相大白。
 
 ##### 解决
 问题后，解决起来就很简单了。找到DBA，把Redis主库的定时刷盘关掉，保留备库的刷盘。再观察监控，超时消失，问题最终得到解决。
