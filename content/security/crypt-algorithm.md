@@ -6,7 +6,7 @@ Tags: 加密算法，摘要算法，对称加密，非对称加密
 Slug: crypt-algorithms
 Summary: 对常见的加密算法，实现、性能、安全性、应用场景做一个说明和对比
 
-##### 我们面临的问题
+#### 我们面临的问题
 - 如何存储网站用户名和密码？
 - 如何在登陆的时候，做用户名和密码校验?
 - 如何加密你的文件，保证安全性?
@@ -15,7 +15,7 @@ Summary: 对常见的加密算法，实现、性能、安全性、应用场景�
 
 通过如下的加解密算法的简单说明，能间接地地回答这些问题。
 
-##### 消息摘要算法
+#### 消息摘要算法
 消息摘要算法包括MD(Message Digest 消息摘要算法)，SHA(Secure Hash Algorithm 安全散列算法)和MAC(Message authentication code消息验证码)三个系列。主要用于验证数据的完整性，密码加密等领域。
 ###### MD系列算法 
 MD系列算法包括MD,MD2,MD3,MD4,MD5。是一个不断优化改进的过程。MD5是输入不定长信息，输出固定长度128-bits的算法。基本方式为，求余、取余、调整长度、与链接变量进行循环运算。经过程序流程，生成四个32位数据，最后联合起来成为一个128-bits散列。
@@ -55,7 +55,7 @@ bcrypt经过了很多安全专家的仔细分析，使用在以安全著称的Op
 
 消息摘要算法是不可逆的，只能用于校验数据。在数据传输中，若想通过密文，加密出原文，就需要对称加密和非对称加密算法来解决。
 
-##### 对称加密算法:
+#### 对称加密算法
 基于“对称密钥”的加密算法主要有DES、3DES（TripleDES）、AES、RC2、RC4、RC5和Blowfish等。
 对称加密算法的特点是：
 
@@ -79,7 +79,7 @@ bcrypt经过了很多安全专家的仔细分析，使用在以安全著称的Op
 	- Zeros填充（0填充）就是在后面补0.
 	- PKCS5Padding 少几个数，就补几个几。
 	
-##### 非对称加密算法
+#### 非对称加密算法
 对称加密需要交换秘钥，而秘钥交换，本身就是个很不安全，很麻烦的事情。非对称加密克服了这个问题，不过性能相对要差很多。对非对称加密而言，有公钥和私钥，公钥加密，私钥解密，反之亦然。使用者生成公私钥，把公钥公开出去，私钥保留，就可以完成加密通信，且私钥无需传输，安全性更高。
 ###### 常用非对称加密算法
 常用的非对称加密算法有：
@@ -122,5 +122,5 @@ OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算
 - [Let's Encrypt](https://letsencrypt.org/)
 - [Java C# AES ](https://zenu.wordpress.com/2011/09/21/aes-128bit-cross-platform-java-and-c-encryption-compatibility/)
 - [OPENSSL](https://www.openssl.org/)
-- [Https]（https://zh.wikipedia.org/wiki/%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE）
+- [Https](https://zh.wikipedia.org/wiki/%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE)
 - [Https的7个误解](http://www.ruanyifeng.com/blog/2011/02/seven_myths_about_https.html)
