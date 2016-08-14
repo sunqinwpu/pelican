@@ -16,6 +16,11 @@ Summay: Estel, An IT Engineer, but love everything which is interesting!
 
 爱好阅读，电影，各种运动(目前羽毛球比较规律，每周2次)，喜欢户外旅行,探索未知的世界。
 
-如果你觉得我的blog，对你有帮助，欢迎打赏。
+欢迎关注我维护的微信公众号。
 
-![Alipay](https://libereco-kv.oss-cn-hangzhou.aliyuncs.com/image/1.pic.jpg)
+【西溪传习录】主要是关于互联网技术&业务，组织&流程，使命&愿景的学习和思考。
+![西溪传习录](https://obe6rxjoq.qnssl.com//person/%E8%A5%BF%E6%BA%AA%E4%BC%A0%E4%B9%A0%E5%BD%95.jpg)
+
+【小窗幽记】更天马行空一点，包罗万象，嬉笑怒骂，皆成文章。 
+![小窗幽记](https://obe6rxjoq.qnssl.com//person/%E5%B0%8F%E7%AA%97%E5%B9%BD%E8%AE%B0.jpg)
+
