@@ -3,7 +3,7 @@ Date: 2016-08-29 14:00
 Modified: 2016-08-29 14:00
 Category: study
 Tags: 新人,成长,java工程师
-Slug: cookie-study
+Slug: rookie-study
 Authors: Estel
 Summary: 最近面试了比较多的人，新人居多，1-5年左右都有。有些人一年就能达到其他人3年的水平，也有些人走了很多弯路，经历了不少坎坷，成长很慢。所以，聊聊新人如何快速成长(5年以内)，希望能帮助到大家，同时自勉。
 
