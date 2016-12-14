@@ -1,4 +1,4 @@
-Title: redis实现有序队列及实际应用
+Title: Redis实现有序队列及实际应用
 Date: 2016-10-09 14:00
 Modified: 2016-10-09 14:00
 Category: databases
