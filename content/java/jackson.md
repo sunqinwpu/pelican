@@ -1,7 +1,7 @@
 Title: Jackson导致应用死锁问题
 Date: 2016-03-17 14:00
 Modified: 2016-03-17 14:00
-Category: study
+Category: java
 Tags: Java,jackson,LRUMap,Hashmap,LinkedHashmap
 Slug: jackson-lock
 Authors: Estel

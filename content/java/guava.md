@@ -1,7 +1,7 @@
 Title: Guava
 Date: 2015-12-12 14:00
 Modified: 2015-12-12 14:00
-Category: study
+Category: java
 Tags: Java,guava,google 
 Slug: xstream
 Authors: Estel

@@ -1,7 +1,7 @@
 Title: Java 8 new feature
 Date: 2016-04-07 14:00
 Modified: 2016-04-07 14:00
-Category: study
+Category: java
 Tags: Java8
 Slug: java8
 Authors: Estel
