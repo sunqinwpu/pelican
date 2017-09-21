@@ -8,10 +8,10 @@ Authors: Estel
 Summary:
 线上性能不时抖动，功能偶尔突发异常，排查之路道阻且长。怎么办？无奈地想办法直接连接线上debug，频繁的在关键节点增删日志，无语地频繁发布。Btrace作为在线排查问题的利器，可以方便地在线动态调试，功能强大。然而，强大之余，一不小心，出个错，就会对线上系统产生致命影响。在Btrace的基础上，淘宝的同学开发了HouseMD，后来又发展出Greys-Anatomy。本文，从java源头讲起，带大家一起看下Java在线问题排查之路。
 
-###### 前言
+##### 前言
 线上性能不时抖动，功能偶尔突发异常，排查之路道阻且长。怎么办？无奈地想办法直接连接线上debug?频繁的在关键节点增删日志?无语地频繁发布?如果能在线，按照自己的意愿，动态地在某些方法上，打印log，添加监控，查看变量，又不影响程序的正常对外提供服务，何其美妙。本文通过梳理java对在线监控的支持，btrace，houseMD,greys-anatomy等工具，回顾总结下java问题在线排查利器。
 
-###### 技术基础
+##### 技术基础
 - Java Instrument API
 Java Instrument API允许java程序，通过代理的方式，加载一个agent的jar。这个jar可以通过修改字节码的方式，替换现有程序的实现逻辑。
 
@@ -130,7 +130,7 @@ assertThat(dynamicType.newInstance().toString(), is("Hello World!"));
 - JMX
 JMX 就是一套可以在运行时获取大多数 JVM 状态的接口，比如 GC、线程、ClassLoading 信息等。
 
-###### Btrace
+##### Btrace
 通过上面的技术基础的了解，可以看到，有很多工具都能让我们对运行中的JVM程序进行动态调试。但是，有2点不便的地方 ：
 
 1. 成本很高。 需要熟悉java字节码，需要写类转换的代码。
@@ -217,10 +217,10 @@ probeMethodName : sayHello
 ```
 这里打印出了执行时间和执行的方法名。 当然Btrace还可以打印出参数，返回值等等。值得一提的是，Btrace为了保护运行中的应用程序，不被修改，规定只允许使用BTraceUtils的方法进行操作。
 
-###### HouseMD
+##### HouseMD
 2012年淘宝的聚石用scala写了HouseMD，将常用的几个Btrace脚本整合在一起形成一个独立风格的应用。简单易用，不需要写任何代码，就可以直接完成上面Btrace解决方案中，需要写java代码才能完成的事情。 可惜现在项目已经不再维护了，不过，在这个项目的启发下，诞生了Greys-Anatomy。
 
-###### Greys-Anatomy
+##### Greys-Anatomy
 Greys是一个JVM进程执行过程中的异常诊断工具，可以在不中断程序执行的情况下轻松完成问题排查工作。和Btrace不同的地方是，使用Greys根本不需要编程，只需要通过一些简单的命令，就可以完成上面的工作。
 
 ```java
@@ -262,10 +262,10 @@ Affect(class-cnt:1 , method-cnt:1) cost in 134 ms.
 ```
 如上图，直接一行命令就可以完成对一个方法的监控。
 
-###### 总结
+##### 总结
 如果出现在线问题，线下无法复现，需要排查，Greys-Anatomy是一个非常好的选择。 如果Greys-Anatomy现有方法不能满足，Btrace应该可以满足。
 
-###### 相关链接
+##### 相关链接
 - [Java Instrument](https://docs.oracle.com/javase/8/docs/api/java/lang/instrument/package-summary.html)
 - [Java Attach](http://docs.oracle.com/javase/7/docs/technotes/guides/attach/index.html)
 - [ASM](http://asm.ow2.org/)
