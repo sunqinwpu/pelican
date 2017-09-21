@@ -3,7 +3,7 @@ Date: 2016-10-09 14:00
 Modified: 2016-10-09 14:00
 Category: databases
 Tags: redis,有序队列, sortedset
-Slug: redis-sorted-queue 
+Slug: redis-security
 Authors: Estel
 Summary: redis是一个简单的kv数据库，利用redis支持的list、set等数据结构，可以很方便地实现有序队列
 
