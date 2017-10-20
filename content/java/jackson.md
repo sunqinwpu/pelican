@@ -81,6 +81,7 @@ Summary: 一个应用发布重启线程池满问题剖析,Jackson
     at com.alipay.baoxianapi.client.util.JacksonUtil.jsonToBean(JacksonUtil.java:58)
 ```
 第一想法，此LRUMap的实现有问题，导致了死锁。
+
 2.	于是扒代码看看。LRUMap部分代码如下：
 ```java
 public class LRUMap<K,V> extends LinkedHashMap<K,V>
@@ -158,6 +159,7 @@ public class LRUMap<K,V> extends LinkedHashMap<K,V>
     }
 ```
 反复看了很久这里的代码，基于可重入读写锁的设计控制，完全没有死锁的可能性。
+
 3. 就在即将放弃的时候，想起了Hashmap并发更新的问题。再仔细看了下堆栈信息。399个线程都在等待读锁，1个线程获取了写锁，很合理。
 这才发现，问题的关键不在于死锁，而在于为什么这个获取写锁的线程，迟迟没有完成写操作，释放锁退出。也就是，为什么会卡在LinkedHashMap.transfer这个方法这里？
 ```java
@@ -170,6 +172,7 @@ public class LRUMap<K,V> extends LinkedHashMap<K,V>
     at com.fasterxml.jackson.databind.util.LRUMap.put(LRUMap.java:68)
     at
 ```
+
 4.	找到LinkedHashMap的源码(线上JDK是1.6),源码如下：
 ```java
     /**
@@ -187,7 +190,9 @@ public class LRUMap<K,V> extends LinkedHashMap<K,V>
     }
 ```
 这里反复读了很久，功能也很简单，就是Hashmap的resize操作，又没有锁，不至于卡住在这里啊。
+
 5.	又仔细回忆下，想起了一个问题，Hashmap在并发更新，并resize的情况下，极端情况会导致内部链表产生环，进而会导致读写操作死循环。难道这个Hashmap被并发更新了吗？ 再仔细分析LRUMap的源代码，发现，在写操作的时候，都有写锁保护了，不会出现并发更新啊。
+
 6. 那么问题究竟是怎么产生的呢？再分析LRUMap的源码，它继承了LinkedHashMap。LinkedHashmap在内部维护了1个双向列表，用于对元素进行排序。可以根据插入顺序排序或者访问顺序排序。看下LinkedHashMap的源码。
 ```java
     /**
@@ -279,6 +284,7 @@ public class LRUMap<K,V> extends LinkedHashMap<K,V>
         }
     }
 ```
+
 8.	每次机器重启的时候，大量请求进入，LRUMap初始化，最容易爆发问题。
 
 ###### 解决方案
