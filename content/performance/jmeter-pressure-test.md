@@ -69,13 +69,13 @@ java.net.SocketException: Too many open files
 僵持不下，小明又去线上看监控，想看看Nginx日志里，能不能有新发现。结果。。。 无意中发现，小红压测的所有的请求，都落在了一台Nginx机器上。这是为啥，负载不均衡 ？？？
 
 找到运维沟通，才发现，集群是用DNS负载均衡的！网络架构如下图：
-![DNS负载均衡](https://obe6rxjoq.qnssl.com/performance/DNS%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1.png)
+![DNS负载均衡](http://img.libereco.cn/performance/DNS%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1.png)
 
 由于压测时在单机进行的，而单机有DNS缓存，所以总是访问同一台机器。
 
 #### Load Balance 调优
 如何单机压测做到负载均衡呢？想到了Load Balance，可以基于TCP/IP层做负载均衡。于是对网络做改造，改造后的架构如下：
-![Load Balance负载均衡](https://obe6rxjoq.qnssl.com/performance/LoadBalance%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1.png)
+![Load Balance负载均衡](http://img.libereco.cn/performance/LoadBalance%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1.png)
 
 调整后，继续压测，发现，所有请求还是全部都落到了一台机器上。看配置参数，发现默认IP保持了，即同一个IP，所有请求，会保持往同一台机器做负载均衡。
 

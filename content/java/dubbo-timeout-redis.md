@@ -12,11 +12,11 @@ Summary: Dubbo服务周期性超时问题排查思路，最终定位为Redis周�
 
 发生问题的日志如下：
 
-![fp-titan-architecture](https://obe6rxjoq.qnssl.com/fp-dubbo-exception-1.png "A系统异常1")
+![fp-titan-architecture](http://img.libereco.cn/fp-dubbo-exception-1.png "A系统异常1")
 ##### 整体架构
 - 整体架构
 
-![fp-titan-architecture](https://obe6rxjoq.qnssl.com/fp-titan-architecture.png "系统整体架构")
+![fp-titan-architecture](http://img.libereco.cn/fp-titan-architecture.png "系统整体架构")
 
 - 整体负载
 	- A集群Web请求TPS 8000左右
@@ -58,7 +58,7 @@ Summary: Dubbo服务周期性超时问题排查思路，最终定位为Redis周�
 6. 到底是服务端问题，还是客户端问题 ？
 	
 	首先是确定，到底是服务端问题，还是客户端问题。重新拉取A系统日志，仔细观察发现，在同一时刻，A系统多台机器均出现超时。下面是另一台机器的异常。
-	![fp-dubbo-exception-2](https://obe6rxjoq.qnssl.com/fp-dubbo-exception-2.png "A系统异常2")
+	![fp-dubbo-exception-2](http://img.libereco.cn/fp-dubbo-exception-2.png "A系统异常2")
 	在这个时刻，A系统的2台机器(192.168.47.104和192.168.47.126)，发起duddo调用，重试了三次，分别重试了B系统的3台机器(192.168.49.105,192.168.49.104,192.168.49.102),全部都出现了超时。再登上A系统的其他机器，发现也都是如此，所有机器，都在同一时刻调用B系统出现大量超时。说明此时，B系统全面超时了。
 	
 	至此，基本可以排除是A系统问题，断定是B系统服务端问题。
@@ -66,8 +66,8 @@ Summary: Dubbo服务周期性超时问题排查思路，最终定位为Redis周�
 6. 再仔细查看B系统日志
 	
 	再登上B系统，仔细观察日志(*一行行仔细看*)。突然惊喜发现，2台机器上，均出现了，服务器响应时间过长。而此前的排查，在海量日志中，这几十行被忽略了。
-	![titan-response-1](https://obe6rxjoq.qnssl.com/titan-response-1.png "B响应时间异常1")
-	![titan-response-2](https://obe6rxjoq.qnssl.com/titan-response-2.png "B响应时间异常2")
+	![titan-response-1](http://img.libereco.cn/titan-response-1.png "B响应时间异常1")
+	![titan-response-2](http://img.libereco.cn/titan-response-2.png "B响应时间异常2")
 	在同一时刻，多台机器，均出现响应时间飙升，从平时的2ms左右，飙升到1500ms左右。那么，什么可能导致B系统，同一时刻，所有的机器均出现响应时间飙升呢？应该就是他们共同依赖的服务(其他服务、缓存、数据库等)。
 	
 	至此，基本排除B系统自身问题，断定是依赖外部服务问题。那么，这些查询中，到底依赖了什么外部服务呢？
