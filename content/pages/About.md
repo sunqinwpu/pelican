@@ -18,9 +18,9 @@ Summay: Estel, An IT Engineer, but love everything which is interesting!
 
 欢迎关注我维护的微信公众号。
 
-【西溪传习录】主要是关于互联网技术&业务，组织&流程，使命&愿景的学习和思考。
-![西溪传习录](http://img.libereco.cn//person/%E8%A5%BF%E6%BA%AA%E4%BC%A0%E4%B9%A0%E5%BD%95.jpg)
+【三醒笔记】主要是关于互联网技术&业务，组织&流程，使命&愿景的学习和思考。
+![三醒笔记](http://img.libereco.cn//person/%E8%A5%BF%E6%BA%AA%E4%BC%A0%E4%B9%A0%E5%BD%95.jpg)
 
-【小窗幽记】更天马行空一点，包罗万象，嬉笑怒骂，皆成文章。 
+【小窗幽记】一些人生体会。 
 ![小窗幽记](http://img.libereco.cn//person/%E5%B0%8F%E7%AA%97%E5%B9%BD%E8%AE%B0.jpg)
 

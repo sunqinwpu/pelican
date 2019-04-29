@@ -1,7 +1,7 @@
 Title: 互联网思维
 Date: 2015-12-09 14:00
 Modified: 2015-12-09 14:00
-Category: culture
+Category: Culture
 Tags: 极限编程，敏捷，效率
 Slug: internet-thinking
 Authors: Estel

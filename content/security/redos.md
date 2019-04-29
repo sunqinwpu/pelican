@@ -1,7 +1,7 @@
  Title: Redos
  Date: 2016-08-14 00:00:00
  Modified: 2016-08-14 00:00:00
- Category: Security
+ Category: Technology
  Tags: 正则表达式，Redos
  Slug: redos
  Summary: 正则表达式是个好东西，灵活且功能强大。然而，用得好，就是神兵利器。用不好，就是定时炸弹。

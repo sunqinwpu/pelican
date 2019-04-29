@@ -1,7 +1,7 @@
 Title: GPG(Gnu Privacy Guird) & GnuPG
 Date: 2015-11-30
 Modified: 2015-11-30
-Category: Security
+Category: Technology
 Tags: GPG,encrypt,email
 Slug: gnu-privacy-guird
 Summary: Gnu Privacy Guird

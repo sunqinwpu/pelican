@@ -1,7 +1,7 @@
 Title: 加密算法!
 Date: 2016-08-12
 Modified: 2016-08-12
-Category: Security
+Category: Technology
 Tags: 加密算法，摘要算法，对称加密，非对称加密
 Slug: crypt-algorithms
 Summary: 对常见的加密算法，实现、性能、安全性、应用场景做一个说明和对比

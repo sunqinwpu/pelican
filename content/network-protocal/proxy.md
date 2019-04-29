@@ -1,7 +1,7 @@
 Title: 代理详解
 Date: 2017-09-17 14:00
 Modified: 2017-09-17 14:00
-Category: Network Protocol
+Category: Technology
 Tags: 代理,VPN,SSH,HTTP代理,Socks5,梯子,翻墙,自由
 Slug: proxy
 Authors: Estel

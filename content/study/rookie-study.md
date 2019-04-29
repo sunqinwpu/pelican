@@ -1,7 +1,7 @@
 Title: 谈谈java工程师新人成长和面试
 Date: 2016-08-29 14:00
 Modified: 2016-08-29 14:00
-Category: study
+Category: Culture
 Tags: 新人,成长,java工程师
 Slug: rookie-study
 Authors: Estel

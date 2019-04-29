@@ -1,7 +1,7 @@
 Title: HttpClient vs HttpUrlConnection
 Date: 2016-12-01 14:00
 Modified: 2016-12-01 14:00
-Category: Network Protocol
+Category: Technology
 Tags: 连接池,HttpClient,HttpUrlConnection
 Slug: httpclient-vs-httpurlconnnection
 Authors: Estel

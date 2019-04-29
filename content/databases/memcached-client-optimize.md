@@ -1,7 +1,7 @@
 Title: Memcached客户端性能优化指南
 Date: 2016-10-10 14:00
 Modified: 2016-12-10 14:00
-Category: databases
+Category: Technology
 Tags: memcached,performance optimize,connection pool
 Slug: memcached-client-optimize 
 Authors: Estel

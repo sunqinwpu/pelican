@@ -1,7 +1,7 @@
 Title: 深入理解HttpClient
 Date: 2014-11-29 14:00
 Modified: 2014-11-29 14:00
-Category: Network Protocol
+Category: Technology
 Tags: java,httpClient,http protocal
 Slug: deep-understand-http-client
 Authors: Estel

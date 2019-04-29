@@ -1,7 +1,7 @@
 Title: 说说我的2014
 Date: 2014-12-31 00:00
 Modified: 2014-12-31 00:00
-Category: Thinking
+Category: Culture
 Tags: 2014,年终总结
 Slug: 2014-summary
 Authors: Estel

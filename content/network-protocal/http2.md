@@ -1,7 +1,7 @@
 Title: Http2
 Date: 2015-12-07 14:00
 Modified: 2014-12-07 14:00
-Category: Network Protocol
+Category: Technology
 Tags: http protocal, http2
 Slug: http2-understand
 Authors: Estel

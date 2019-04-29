@@ -1,7 +1,7 @@
 Title: Cassandra性能优化
 Date: 2016-12-26 14:00
 Modified: 2016-12-26 14:00
-Category: databases
+Category: Technology
 Tags: cassandra,performance optimize,connection pool
 Slug: cassandra-optimize 
 Authors: Estel

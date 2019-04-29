@@ -1,7 +1,7 @@
 Title: Git 入门及实战
 Date: 2015-12-12 14:00
 Modified: 2015-12-12 14:00
-Category: study
+Category: Technology
 Tags: Git,version control,svn 
 Slug: git
 Authors: Estel

@@ -1,7 +1,7 @@
 Title: 多数据源性能优化
 Date: 2015-12-09 14:00
 Modified: 2015-12-09 14:00
-Category: culture
+Category: Technology
 Tags: 数据库，kv，搜索引擎，hadoop，storm，kafka
 Slug: multi-datasource-optimize 
 Authors: Estel

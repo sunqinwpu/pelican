@@ -1,7 +1,7 @@
 Title:一个高并发性能压测的实例
 Date: 2016-12-01 14:00
 Modified: 2016-12-01 14:00
-Category: performance
+Category: Technology
 Tags: 高并发,Jmeter,压测,DNS负载均衡,LVS,长连接,Https
 Slug: jmeter-pressure-test
 Authors: Estel

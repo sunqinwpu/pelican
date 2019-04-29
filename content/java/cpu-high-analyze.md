@@ -1,7 +1,7 @@
 Title: 一个应用CPU飙高的问题排查
 Date: 2017-01-05 14:00
 Modified: 2017-01-05 14:00
-Category: java
+Category: Technology
 Tags: Java,htop,jstack,jmap,cpu飙高 
 Slug: cpu-high-analyze
 Authors: Estel

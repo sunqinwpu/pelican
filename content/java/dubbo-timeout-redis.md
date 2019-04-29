@@ -1,7 +1,7 @@
 Title: Dubbo服务周期性超时问题排查
 Date: 2016-08-05 14:00
 Modified: 2016-08-05 14:00
-Category: java
+Category: Technology
 Tags: Java,Dubbo,Timeout,Redis,刷盘 
 Slug: dubbo-timeout-redis
 Authors: Estel
