@@ -1,16 +1,21 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
 
+LOCALE = 'en_US.UTF-8'
+#LOCALE = ('zh_CN.utf8', 'en_US.utf8')
 AUTHOR = 'Estel'
 SITENAME = 'Die Luft der Freiheit weht!'
 SITESUBTITLE = 'Estel\'s blog!'
 SITEURL = 'https://libereco.cn'
 #SITEURL = ''
+TIMEZONE = 'Asia/Shanghai'
 
 PATH = 'content'
 
-TIMEZONE = 'Asia/Shanghai'
 
 DATE_FORMATS = {
     'en':('usa','%a, %d %b %Y'),
@@ -23,7 +28,7 @@ DEFAULT_LANG = 'zh_CN'
 # Feed generation is usually not desired when developing
 # FEED_ALL_ATOM = True
 # FEED_ALL_RSS = True
-TRANSLATION_FEED_ATOM = 'feeds/all-%s.atom.xml'
+TRANSLATION_FEED_ATOM = 'feeds/all-{lang}.atom.xml'
 
 # path-specific metadata
 EXTRA_PATH_METADATA = {
@@ -97,7 +102,7 @@ ARTICLE_LANG_SAVE_AS = 'posts/{category}/{date:%Y}/{date:%m}/{date:%d}/{slug}-{l
 GOOGLE_ANALYTICS = 'UA-57075958-1'
 
 # Plugins and extensions
-MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc']
+MARKDOWN = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc']
 PLUGIN_PATHS = ['../pelican-plugins']
 #PLUGINS = ['sitemap', 'extract_toc', 'tipue_search', 'liquid_tags.img',
 #           'neighbors', 'latex', 'related_posts', 'assets', 'share_post',
